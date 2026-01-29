@@ -6,6 +6,7 @@ body {
     margin: 0;
     padding: 20px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     
@@ -55,6 +56,19 @@ button {
     
 }
 
+#logo-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 40px;
+
+ }
+
+ #logo {
+    width: 100px;
+    height: 100px;
+ }
+
 @media (max-width: 768px) {
   #calculator {
     width: 85%;
@@ -86,6 +100,17 @@ button {
   body {
     padding: 10px;
   }
+
+ 
+
+ }
+
+ #logo {
+    margin-top: 5px;
+    width: 300px;
+    height: 300px;
+
+ }
 
 
 }
