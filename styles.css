@@ -1,7 +1,7 @@
 body {
     font-family: 'Dancing Script', cursive; 
     font-size: 20px;
-    font-color: #333;
+    color: #333;
     background-color: #f1e0c5;
     margin: 0;
     padding: 20px;
@@ -9,7 +9,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
 }
 
 h1 {
@@ -36,7 +35,7 @@ h1 {
     padding: 50px;
     border-radius: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.398);
-    margin-top: 50px;
+    margin-top: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -65,9 +64,16 @@ button {
  }
 
  #logo {
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 300px;
  }
+
+#title-image {
+    width: 400px;
+    height: auto;
+    margin-bottom: -70px;
+    margin-top: -110px;
+}
 
 @media (max-width: 768px) {
   #calculator {
@@ -101,16 +107,21 @@ button {
     padding: 10px;
   }
 
+  #logo {
+    width: 200px;
+    height: 200px;
+    margin-top: 5px;
+  }
+
+  #title-image {
+    width: 250px;
+    height: auto;
+    margin-bottom: -50px;
+    margin-top: -55px;
+  }
+
  
 
  }
 
- #logo {
-    margin-top: 5px;
-    width: 300px;
-    height: 300px;
 
- }
-
-
-}
