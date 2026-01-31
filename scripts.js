@@ -7,21 +7,45 @@ document.getElementById("calculateBtn").addEventListener("click", () => {
     const hoursPerShift = Number(document.getElementById("hoursPerShift").value);
     const shiftsPerMonth = Number(document.getElementById("shiftsPerMonth").value);
 
-
+    // Calculate gross pay
     const dailyPay = 
         hourlyPay * hoursPerShift;
 
     const totalPay = 
         dailyPay * shiftsPerMonth;
 
-    document.getElementById("monthlyPay").textContent = `Monthly Pay: £${totalPay.toFixed(2)}`;
+    const taxCode = document.getElementById("taxCode").value;
+
+    let allowanceAnnual = 0;
+
+    // Determine allowance based on tax code
+    if (taxCode === "1257L") {
+        allowanceAnnual = 12570;
+    }
+
+    const allowanceMonthly = allowanceAnnual / 12;
+    const taxableIncome = totalPay - allowanceMonthly;
+
+    let tax = 0;
+    if (taxableIncome > 0) {
+        tax = taxableIncome * 0.20; // 20% tax rate if over allowance
+    } 
+    const netPay = totalPay - tax;
+
+    // Display results
+    document.getElementById("netPay").textContent = `Net Pay: £${netPay.toFixed(2)}`;
+    document.getElementById("taxAmount").textContent = `Tax: £${tax.toFixed(2)}`;
+    document.getElementById("grossPay").textContent = `Gross Pay: £${totalPay.toFixed(2)}`;
 
 });
+
 
 // Clear all input fields and output when the clear button is clicked
 document.getElementById("resetBtn").addEventListener("click", () => {
     document.getElementById("hourlyPay").value = "";
     document.getElementById("hoursPerShift").value = "";
     document.getElementById("shiftsPerMonth").value = "";
-    document.getElementById("monthlyPay").textContent = "Monthly Pay: £0.00";
+    document.getElementById("grossPay").textContent = "Gross Pay: £0.00";
+    document.getElementById("taxAmount").textContent = "Tax: £0.00";
+    document.getElementById("netPay").textContent = "Net Pay: £0.00";
 });
