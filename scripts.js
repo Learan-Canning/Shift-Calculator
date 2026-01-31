@@ -23,10 +23,14 @@ document.getElementById("calculateBtn").addEventListener("click", () => {
 
     let allowanceAnnual = 0;
 
-    // Determine allowance based on tax code
+    // Determine allowance based on tax codes
     if (taxCode === "1257L") {
-        allowanceAnnual = 12570;
-    }
+        allowanceAnnual = 12570;     // Standard Personal Allowance of  £12,570
+    }  else if (taxCode === "1263L") {
+        allowanceAnnual = 12630;     // Personal Allowance of £12,630
+    }  else if (taxCode === "BR") {
+        allowanceAnnual = 0;        // Basic Rate has no allowance
+        }
 
     const allowanceMonthly = allowanceAnnual / 12;
     const taxableIncome = totalPay - allowanceMonthly;
@@ -43,7 +47,7 @@ document.getElementById("calculateBtn").addEventListener("click", () => {
     document.getElementById("grossPay").textContent = `Gross Pay: £${totalPay.toFixed(2)}`;
 
 });
-
+ 
 
 // Clear all input fields and output when the clear button is clicked
 document.getElementById("resetBtn").addEventListener("click", () => {

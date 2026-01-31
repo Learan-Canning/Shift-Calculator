@@ -51,15 +51,7 @@ select {
     cursor: pointer;
 }
 
-select option {
-    background-color: #fff;
-    color: #333;
-}
 
-select option:checked {
-    background-color: #b2a2a2;
-    color: #fff;
-}
 
 select:hover {
     background-color: #e0d4b2;
