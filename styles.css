@@ -18,7 +18,24 @@ h1 {
 }
 
 .form-group {
+    width: 100%;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.form-group label {
+    text-align: left;
+}
+
+.form-group input[type="number"] {
+    width: 70px;
+    text-align: right;
+    border: 1px solid #333;
+    border-radius: 50px;
+    padding: 5px;
 }
 
 #result {
@@ -75,6 +92,10 @@ button {
     margin-top: -110px;
 }
 
+
+
+  
+
 @media (max-width: 768px) {
   #calculator {
     width: 85%;
@@ -120,8 +141,9 @@ button {
     margin-top: -55px;
   }
 
+  
  
 
- }
+}
 
 
