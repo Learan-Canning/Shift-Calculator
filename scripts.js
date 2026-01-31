@@ -16,6 +16,11 @@ document.getElementById("calculateBtn").addEventListener("click", () => {
 
     const taxCode = document.getElementById("taxCode").value;
 
+    if (taxCode === "") {
+        alert("Please select a tax code.");
+        return;
+    }
+
     let allowanceAnnual = 0;
 
     // Determine allowance based on tax code
@@ -48,4 +53,5 @@ document.getElementById("resetBtn").addEventListener("click", () => {
     document.getElementById("grossPay").textContent = "Gross Pay: £0.00";
     document.getElementById("taxAmount").textContent = "Tax: £0.00";
     document.getElementById("netPay").textContent = "Net Pay: £0.00";
+    document.getElementById("taxCode").value = "";
 });
