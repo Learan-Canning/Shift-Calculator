@@ -30,8 +30,6 @@ document.getElementById("calculateBtn").addEventListener("click", () => {
         allowanceAnnual = 12630;     // Personal Allowance of £12,630
     }  else if (taxCode === "BR") {
         allowanceAnnual = 0;        // Basic Rate has no allowance
-    } else if (taxCode === "D0") {
-
     }
 
     const allowanceMonthly = allowanceAnnual / 12;
@@ -47,7 +45,7 @@ document.getElementById("calculateBtn").addEventListener("click", () => {
     const niLowerLimit = 1047.50; // Monthly Lower Earnings Limit
     const niUpperLimit = 4189.17; // Monthly Upper Earnings Limit
       
-    if (totalPay > niLowerLimt) {
+    if (totalPay > niLowerLimit) {
         if (totalPay <= niUpperLimit) {
             nationalinsurance = (totalPay - niLowerLimit) * 0.08; // 8% NI rate
         } else {
@@ -60,9 +58,11 @@ document.getElementById("calculateBtn").addEventListener("click", () => {
     
 
     // Display results
+    document.getElementById("grossPay").textContent = `Gross Pay: £${totalPay.toFixed(2)}`;
     document.getElementById("netPay").textContent = `Net Pay: £${netPay.toFixed(2)}`;
     document.getElementById("taxAmount").textContent = `Tax: £${tax.toFixed(2)}`;
-    document.getElementById("grossPay").textContent = `Gross Pay: £${totalPay.toFixed(2)}`;
+    document.getElementById("niAmount").textContent = `NI: £${nationalinsurance.toFixed(2)}`;
+    
 
 });
  
@@ -75,5 +75,6 @@ document.getElementById("resetBtn").addEventListener("click", () => {
     document.getElementById("grossPay").textContent = "Gross Pay: £0.00";
     document.getElementById("taxAmount").textContent = "Tax: £0.00";
     document.getElementById("netPay").textContent = "Net Pay: £0.00";
+    document.getElementById("niAmount").textContent = "NI: £0.00";
     document.getElementById("taxCode").value = "";
 });
