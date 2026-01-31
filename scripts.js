@@ -30,7 +30,9 @@ document.getElementById("calculateBtn").addEventListener("click", () => {
         allowanceAnnual = 12630;     // Personal Allowance of £12,630
     }  else if (taxCode === "BR") {
         allowanceAnnual = 0;        // Basic Rate has no allowance
-        }
+    } else if (taxCode === "D0") {
+
+    }
 
     const allowanceMonthly = allowanceAnnual / 12;
     const taxableIncome = totalPay - allowanceMonthly;
@@ -39,7 +41,23 @@ document.getElementById("calculateBtn").addEventListener("click", () => {
     if (taxableIncome > 0) {
         tax = taxableIncome * 0.20; // 20% tax rate if over allowance
     } 
-    const netPay = totalPay - tax;
+
+    // NI 
+    let nationalinsurance = 0;
+    const niLowerLimit = 1047.50; // Monthly Lower Earnings Limit
+    const niUpperLimit = 4189.17; // Monthly Upper Earnings Limit
+      
+    if (totalPay > niLowerLimt) {
+        if (totalPay <= niUpperLimit) {
+            nationalinsurance = (totalPay - niLowerLimit) * 0.08; // 8% NI rate
+        } else {
+            nationalinsurance  = (niUpperLimit - niLowerLimit) * 0.08 + (totalPay - niUpperLimit) * 0.02; // 2% NI rate above upper limit 
+        }
+    }
+
+    const netPay = totalPay - tax - nationalinsurance;
+    
+    
 
     // Display results
     document.getElementById("netPay").textContent = `Net Pay: £${netPay.toFixed(2)}`;
