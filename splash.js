@@ -43,6 +43,6 @@ function updateToggleIcon() {
 // Click anywhere to enter calculator
 document.body.addEventListener('click', (e) => {
     if (e.target !== themeToggle && !themeToggle.contains(e.target)) {
-        window.location.href = 'index.html';
+        window.location.href = 'calculator.html';
     }
 });
