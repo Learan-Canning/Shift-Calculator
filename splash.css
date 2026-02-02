@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.splash-page {
+    background-color: #1a1a1a;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Binary column (left side) */
+.binary-bg.left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100vh;
+    color: #00ff00;
+    font-size: 14px;
+    line-height: 1.2;
+    white-space: pre-wrap;
+    overflow: hidden;
+    animation: scrollUp 15s linear infinite;
+    opacity: 0.3;
+}
+
+/* Money column (right side) */
+.money-bg.right {
+    position: absolute;
+    left: 50%;  /* ← change from "right: 0" to "left: 50%" */
+    top: 0;
+    width: 50%;
+    height: 100vh;
+    color: #00ff00;
+    font-size: 14px;
+    line-height: 1.2;
+    white-space: pre-wrap;
+    overflow: hidden;
+    animation: scrollDown 15s linear infinite;
+    opacity: 0.3;
+}
+
+/* Fade effect at edges */
+.binary-bg.left::before,
+.money-bg.right::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 15%;
+    background: linear-gradient(to bottom, #1a1a1a, transparent);
+    z-index: 1;
+}
+
+.binary-bg.left::after,
+.money-bg.right::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 15%;
+    background: linear-gradient(to top, #1a1a1a, transparent);
+    z-index: 1;
+}
+
+/* Animations */
+@keyframes scrollUp {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes scrollDown {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100%);
+    }
+}
+
+/* Center content */
+.splash-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    cursor: pointer;
+}
+
+.splash-logo {
+    width: 400px;  /* ← increase from 200px */
+    height: 400px;  /* ← increase from 200px */
+    filter: drop-shadow(0 0 8px #00ff00);  /* ← reduce from 20px to 8px */
+    animation: glow 2s ease-in-out infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes glow {
+    0%, 100% {
+        filter: drop-shadow(0 0 8px #00ff00);  /* ← reduce from 20px */
+    }
+    50% {
+        filter: drop-shadow(0 0 15px #00ff00);  /* ← reduce from 40px */
+    }
+}
+
+.enter-text {
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0%, 49%, 100% {
+        opacity: 1;
+    }
+    50%, 99% {
+        opacity: 0;
+    }
+}
