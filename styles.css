@@ -129,7 +129,7 @@ button {
     gap: 8px;
     margin-top: auto;
     padding: 30px;
-    background-color:  #b2a2a2;
+    background-color:  #ffffff;
     border-top: #333 solid 2px;
     width: 100%;
     margin-bottom: 0;
@@ -156,7 +156,7 @@ footer a {
 
 footer a:hover {
   
-    color: #ffffff;
+    color: #b2a2a2;
 }
 
 footer p {
