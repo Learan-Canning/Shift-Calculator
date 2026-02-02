@@ -108,3 +108,20 @@ body.splash-page {
         opacity: 0;
     }
 }
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .binary-bg {
+        font-size: 10px;
+        line-height: 1;
+    }
+    
+    .splash-logo {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .enter-text {
+        font-size: 14px;
+    }
+}
