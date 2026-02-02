@@ -10,10 +10,15 @@ function generateBinary() {
 
 // Generate money symbols
 function generateMoney() {
-    const symbols = ['£', '$', '€', '¥'];
+    const symbols = ['£', '$', '0', '1'];
     let money = '';
     for (let i = 0; i < 500; i++) {
-        money += symbols[Math.floor(Math.random() * symbols.length)];
+        // First half: binary, second half: currency
+        if (i < 250) {
+            money += Math.random() > 0.5 ? '1' : '0';
+        } else {
+            money += symbols[Math.floor(Math.random() * symbols.length)];
+        }
         if (i % 15 === 14) money += '\n';
     }
     return money;

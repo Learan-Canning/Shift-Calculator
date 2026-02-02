@@ -20,10 +20,10 @@ body.splash-page {
 /* Binary column (left side) */
 .binary-bg.left {
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 40%;
+    top: 20%;  /* ← change from 10% to 20% */
     width: 50%;
-    height: 100vh;
+    height: 60vh;  /* ← change from 100vh to 60vh */
     color: #00ff00;
     font-size: 14px;
     line-height: 1.2;
@@ -36,17 +36,29 @@ body.splash-page {
 /* Money column (right side) */
 .money-bg.right {
     position: absolute;
-    left: 50%;  /* ← change from "right: 0" to "left: 50%" */
-    top: 0;
+    left: 50%;
+    top: 20%;  /* ← add this */
     width: 50%;
-    height: 100vh;
+    height: 60vh;  /* ← change from 100vh to 60vh */
     color: #00ff00;
     font-size: 14px;
     line-height: 1.2;
     white-space: pre-wrap;
     overflow: hidden;
-    animation: scrollDown 15s linear infinite;
+    animation: scrollDown 15s linear infinite, morphContent 20s linear infinite;
     opacity: 0.3;
+}
+
+@keyframes morphContent {
+    0% {
+        content: 'binary';
+    }
+    50% {
+        content: 'currency';
+    }
+    100% {
+        content: 'binary';
+    }
 }
 
 /* Fade effect at edges */
