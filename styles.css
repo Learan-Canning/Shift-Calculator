@@ -76,7 +76,7 @@ select:focus {
     max-width: 500px;
     width: 90%;
     background-color: #fff;
-    border: 3px solid #b2a2a2;
+    border: 3px solid #333;
     padding: 50px;
     border-radius: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.398);
@@ -98,7 +98,13 @@ button {
     cursor: pointer;
     transition: 0.3s;
     margin: 5px;
+    border: 1px solid  #b2a2a2;
     
+}
+
+button:hover {
+    border: 1px solid  #333;
+    color: #333;
 }
 
 #logo-container {
@@ -130,7 +136,8 @@ button {
     margin-top: auto;
     padding: 30px;
     background-color:  #ffffff;
-    border-top: #333 solid 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.398);
+    border-top: 2px solid #333;
     width: 100%;
     margin-bottom: 0;
     
@@ -152,6 +159,7 @@ footer a {
     font-size: 30px;
     text-decoration: none;
     transition: 0.3s;
+    
 }
 
 footer a:hover {
