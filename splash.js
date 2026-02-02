@@ -1,32 +1,15 @@
-// Generate binary text
+// Generate lots of binary text for full screen coverage
 function generateBinary() {
     let binary = '';
-    for (let i = 0; i < 500; i++) {
+    for (let i = 0; i < 100000; i++) {  // Even more text
         binary += Math.random() > 0.5 ? '1' : '0';
-        if (i % 20 === 19) binary += '\n';
+        if (i % 200 === 199) binary += '\n';  // 200 characters per line
     }
     return binary;
 }
 
-// Generate money symbols
-function generateMoney() {
-    const symbols = ['£', '$', '0', '1'];
-    let money = '';
-    for (let i = 0; i < 500; i++) {
-        // First half: binary, second half: currency
-        if (i < 250) {
-            money += Math.random() > 0.5 ? '1' : '0';
-        } else {
-            money += symbols[Math.floor(Math.random() * symbols.length)];
-        }
-        if (i % 15 === 14) money += '\n';
-    }
-    return money;
-}
-
 // Insert content
-document.querySelector('.binary-bg.left').textContent = generateBinary();
-document.querySelector('.money-bg.right').textContent = generateMoney();
+document.querySelector('.binary-bg').textContent = generateBinary();
 
 // Click anywhere to enter calculator
 document.body.addEventListener('click', () => {

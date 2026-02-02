@@ -17,91 +17,54 @@ body.splash-page {
     position: relative;
 }
 
-/* Binary column (left side) */
-.binary-bg.left {
+/* Full-screen binary background */
+.binary-bg {
     position: absolute;
-    left: 40%;
-    top: 20%;  /* ← change from 10% to 20% */
-    width: 50%;
-    height: 60vh;  /* ← change from 100vh to 60vh */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
     color: #00ff00;
     font-size: 14px;
     line-height: 1.2;
     white-space: pre-wrap;
     overflow: hidden;
-    animation: scrollUp 15s linear infinite;
+    animation: scrollUp 20s linear infinite;
     opacity: 0.3;
+    display: flex;
+    justify-content: center;
 }
 
-/* Money column (right side) */
-.money-bg.right {
-    position: absolute;
-    left: 50%;
-    top: 20%;  /* ← add this */
-    width: 50%;
-    height: 60vh;  /* ← change from 100vh to 60vh */
-    color: #00ff00;
-    font-size: 14px;
-    line-height: 1.2;
-    white-space: pre-wrap;
-    overflow: hidden;
-    animation: scrollDown 15s linear infinite, morphContent 20s linear infinite;
-    opacity: 0.3;
-}
-
-@keyframes morphContent {
-    0% {
-        content: 'binary';
-    }
-    50% {
-        content: 'currency';
-    }
-    100% {
-        content: 'binary';
-    }
-}
-
-/* Fade effect at edges */
-.binary-bg.left::before,
-.money-bg.right::before {
+/* Fade effect at top and bottom */
+.binary-bg::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 15%;
+    height: 30%;
     background: linear-gradient(to bottom, #1a1a1a, transparent);
     z-index: 1;
 }
 
-.binary-bg.left::after,
-.money-bg.right::after {
+.binary-bg::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 15%;
+    height: 30%;
     background: linear-gradient(to top, #1a1a1a, transparent);
     z-index: 1;
 }
 
-/* Animations */
+/* Scroll animation */
 @keyframes scrollUp {
     from {
-        transform: translateY(0);
+        transform: translateY(100%);
     }
     to {
         transform: translateY(-100%);
-    }
-}
-
-@keyframes scrollDown {
-    from {
-        transform: translateY(0);
-    }
-    to {
-        transform: translateY(100%);
     }
 }
 
@@ -114,19 +77,19 @@ body.splash-page {
 }
 
 .splash-logo {
-    width: 400px;  /* ← increase from 200px */
-    height: 400px;  /* ← increase from 200px */
-    filter: drop-shadow(0 0 8px #00ff00);  /* ← reduce from 20px to 8px */
+    width: 400px;
+    height: 400px;
+    filter: drop-shadow(0 0 8px #00ff00);
     animation: glow 2s ease-in-out infinite;
     margin-bottom: 20px;
 }
 
 @keyframes glow {
     0%, 100% {
-        filter: drop-shadow(0 0 8px #00ff00);  /* ← reduce from 20px */
+        filter: drop-shadow(0 0 8px #00ff00);
     }
     50% {
-        filter: drop-shadow(0 0 15px #00ff00);  /* ← reduce from 40px */
+        filter: drop-shadow(0 0 15px #00ff00);
     }
 }
 
