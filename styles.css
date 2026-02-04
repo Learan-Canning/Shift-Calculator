@@ -251,4 +251,135 @@ footer p {
 
 }
 
+/* DARK MODE STYLES FOR CALCULATOR */
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #00ff00;
+}
+
+body.dark-mode #calculator {
+    background-color: #393939a9;
+    border-color: #00ff00;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+}
+
+body.dark-mode .form-group input[type="number"],
+body.dark-mode select {
+    background-color: #1a1a1a;
+    color: #00ff00;
+    border-color: #00ff00;
+}
+
+body.dark-mode .form-group label {
+    color: #00ff00;
+}
+
+body.dark-mode button {
+    background-color: #00ff00;
+    color: #1a1a1a;
+    border-color: #00ff00;
+}
+
+body.dark-mode button:hover {
+    border-color: #00ff00;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+body.dark-mode #result {
+    color: #00ff00;
+}
+
+body.dark-mode #result h2 {
+    color: #00ff00;
+}
+
+body.dark-mode #footer {
+    background-color: #393939a9;
+    border-top-color: #00ff00;
+}
+
+body.dark-mode .footer-text {
+    color: #00ff00;
+}
+
+body.dark-mode footer a {
+    color: #00ff00;
+}
+
+body.dark-mode footer a:hover {
+    color: #00ff00;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+}
+
+
+
+/* Dark mode logo swap */
+body.dark-mode #logo {
+    content: url('images/logodarkmode.png');
+}
+
+/* Centered, transparent theme toggle (calculator page) */
+.theme-toggle-calc {
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: transparent;
+    border: 2px solid transparent;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    color: #333; /* light mode icon color */
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 100;
+    transition: border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.theme-toggle-calc:hover {
+    border-color: #00ff00; /* green border on hover */
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.35);
+}
+
+/* Dark mode icon color = neon green */
+body.dark-mode .theme-toggle-calc {
+    color: #00ff00;
+}
+
+/* Theme toggle above calculator (no overlap) */
+.theme-toggle-calc {
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto 10px auto;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.35); /* light circle */
+    border: 2px solid transparent;
+    color: #333;
+    font-size: 20px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.theme-toggle-calc:hover {
+    border-color: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+/* Dark mode = muted green, still circular */
+body.dark-mode .theme-toggle-calc {
+    color: #7cff9a; /* mood green */
+    background-color: rgba(124, 255, 154, 0.1);
+    border-color: transparent;
+}
+
+body.dark-mode .theme-toggle-calc:hover {
+    border-color: #7cff9a;
+    box-shadow: 0 0 10px rgba(124, 255, 154, 0.35);
+}
+
 

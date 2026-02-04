@@ -78,3 +78,32 @@ document.getElementById("resetBtn").addEventListener("click", () => {
     document.getElementById("niAmount").textContent = "NI: £0.00";
     document.getElementById("taxCode").value = "";
 });
+
+// Theme toggle for calculator page
+const body = document.body;
+const themeToggleCalc = document.getElementById('themeToggleCalc');
+
+// Load saved theme
+const savedTheme = localStorage.getItem('theme') || 'dark-mode';
+body.classList.add(savedTheme);
+updateToggleIconCalc();
+
+themeToggleCalc.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    body.classList.toggle('light-mode');
+    
+    const currentTheme = body.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode';
+    localStorage.setItem('theme', currentTheme);
+    updateToggleIconCalc();
+});
+
+function updateToggleIconCalc() {
+    const icon = themeToggleCalc.querySelector('i');
+    if (body.classList.contains('dark-mode')) {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+    } else {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    }
+}
