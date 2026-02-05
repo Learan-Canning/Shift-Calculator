@@ -276,9 +276,9 @@ body.dark-mode .form-group label {
 }
 
 body.dark-mode button {
-    background-color: #00ff00;
+    background-color: #00ff0000;
     color: #1a1a1a;
-    border-color: #00ff00;
+    border-color: #00ff0000;
 }
 
 body.dark-mode button:hover {
@@ -319,67 +319,43 @@ body.dark-mode #logo {
     content: url('images/logodarkmode.png');
 }
 
-/* Centered, transparent theme toggle (calculator page) */
+/* Theme toggle button - transparent with icon only */
 .theme-toggle-calc {
-    position: fixed;
-    top: 16px;
+    position: absolute;
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background: transparent;
-    border: 2px solid transparent;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    color: #333; /* light mode icon color */
-    font-size: 20px;
-    cursor: pointer;
-    z-index: 100;
-    transition: border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.theme-toggle-calc:hover {
-    border-color: #00ff00; /* green border on hover */
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.35);
-}
-
-/* Dark mode icon color = neon green */
-body.dark-mode .theme-toggle-calc {
-    color: #00ff00;
-}
-
-/* Theme toggle above calculator (no overlap) */
-.theme-toggle-calc {
-    position: static;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 20px auto 10px auto;
     width: 52px;
     height: 52px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.35); /* light circle */
-    border: 2px solid transparent;
+    background-color: transparent;
+    border: 1px solid transparent;
     color: #333;
-    font-size: 20px;
+    font-size: 24px;
     cursor: pointer;
-    transition: border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    z-index: 100;
+    transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .theme-toggle-calc:hover {
-    border-color: #ffffff;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+    border-color: #333;
 }
 
-/* Dark mode = muted green, still circular */
+/* Dark mode icon color */
 body.dark-mode .theme-toggle-calc {
-    color: #7cff9a; /* mood green */
-    background-color: rgba(124, 255, 154, 0.1);
-    border-color: transparent;
+    color: #7cff9a;
 }
 
 body.dark-mode .theme-toggle-calc:hover {
-    border-color: #7cff9a;
-    box-shadow: 0 0 10px rgba(124, 255, 154, 0.35);
+    color: #00ff00;
+    border-color: #00ff00;
+}
+
+/* Give space so calculator sits below the toggle */
+body {
+    padding-top: 70px;
 }
 
 

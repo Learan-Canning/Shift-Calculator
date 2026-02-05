@@ -109,26 +109,28 @@ body.splash-page {
     }
 }
 
-/* Theme toggle button */
+/* Theme toggle button - transparent with icon only */
 .theme-toggle {
-    position: fixed;
+    position: absolute;
     top: 20px;
-    right: 20px;
-    background-color: #00ff00;
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    color: #1a1a1a;
-    font-size: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    background-color: transparent;
+    border: 2px solid transparent;
+    color: #333;
+    font-size: 24px;
     cursor: pointer;
     z-index: 100;
-    transition: 0.3s;
+    transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .theme-toggle:hover {
-    scale: 1.1;
-    box-shadow: 0 0 10px #00ff00;
+    border-color: #333;
 }
 
 /* Light mode for splash */
@@ -147,21 +149,20 @@ body.splash-page.light-mode .enter-text {
 }
 
 body.splash-page.light-mode .theme-toggle {
-    background-color: #333;
-    color: #f5f5f5;
+    color: #333;
 }
 
 body.splash-page.light-mode .theme-toggle:hover {
-    box-shadow: 0 0 10px #333;
+    border-color: #333;
 }
 
-/* Dark mode (default) */
-body.splash-page.dark-mode .theme-toggle i::before {
-    content: '\f186'; /* sun icon */
+/* Dark mode - icon color only, no background */
+body.splash-page.dark-mode .theme-toggle {
+    color: #7cff9a;
 }
 
-body.splash-page.light-mode .theme-toggle i::before {
-    content: '\f186'; /* sun icon */
+body.splash-page.dark-mode .theme-toggle:hover {
+    border-color: #00ff00;
 }
 
 /* Mobile responsiveness */
