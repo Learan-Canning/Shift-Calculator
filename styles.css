@@ -1,3 +1,7 @@
+/* ====================================================================== */
+/* LIGHT MODE - BASE STYLES & LAYOUT */
+/* ====================================================================== */
+
 body {
     font-family: 'Dancing Script', cursive; 
     font-size: 20px;
@@ -9,16 +13,21 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-    
-    
+    padding-top: 70px; /* space for theme toggle button */
 }
 
 h1 {
     margin-top: 0;
     margin-bottom: 30px;
-
 }
+
+h2 {
+    margin: 0;
+}
+
+/* ====================================================================== */
+/* LIGHT MODE - FORM ELEMENTS */
+/* ====================================================================== */
 
 .form-group {
     width: 100%;
@@ -31,16 +40,21 @@ h1 {
 
 .form-group label {
     text-align: left;
+    color: #333;
 }
 
+/* Number inputs - rounded corners and text align right */
 .form-group input[type="number"] {
     width: 70px;
     text-align: right;
     border: 1px solid #333;
     border-radius: 50px;
     padding: 5px;
+    background-color: #fff;
+    color: #333;
 }
 
+/* Select dropdown styling */
 select {
     width: 140px;
     text-align: right;
@@ -48,17 +62,15 @@ select {
     border-radius: 50px;
     padding: 5px;
     background-color: #fff;
-    color:#333;
+    color: #333;
     font-family: 'Dancing Script', cursive;
     font-size: 18px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
-
-
 
 select:hover {
     background-color: #e0d4b2;
-    
 }
 
 select:focus {
@@ -66,11 +78,9 @@ select:focus {
     box-shadow: 0 0 5px rgba(179, 162, 162, 0.5);
 }
 
-#result {
-    margin-top: 60px;
-    margin-bottom: 30px;
-    
-}
+/* ====================================================================== */
+/* LIGHT MODE - CALCULATOR CONTAINER */
+/* ====================================================================== */
 
 #calculator {
     max-width: 500px;
@@ -87,39 +97,6 @@ select:focus {
     align-items: center;
 }
 
-button {
-    background-color: #f1e0c5;
-    color: #333;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 20px;
-    font-family: 'Dancing Script', cursive;
-    font-size: 18px;
-    cursor: pointer;
-    transition: 0.3s;
-    margin: 5px;
-    border: 1px solid  #b2a2a2;
-    
-}
-
-button:hover {
-    border: 1px solid  #333;
-    color: #333;
-}
-
-#logo-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 5px;
-    margin-bottom: 40px;
-
- }
-
- #logo {
-    width: 300px;
-    height: 300px;
- }
-
 #title-image {
     width: 400px;
     height: auto;
@@ -127,6 +104,49 @@ button:hover {
     margin-top: -110px;
 }
 
+#result {
+    margin-top: 60px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* ====================================================================== */
+/* LIGHT MODE - BUTTONS */
+/* ====================================================================== */
+
+button {
+    background-color: #f1e0c5;
+    color: #333;
+    border: 1px solid #b2a2a2;
+    padding: 12px 30px;
+    border-radius: 20px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 5px;
+}
+
+button:hover {
+    border: 1px solid #333;
+    color: #333;
+}
+
+/* ====================================================================== */
+/* LIGHT MODE - FOOTER & LOGO */
+/* ====================================================================== */
+
+#logo-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 40px;
+}
+
+#logo {
+    width: 300px;
+    height: 300px;
+}
 
 #footer {
     display: flex;
@@ -135,23 +155,24 @@ button:hover {
     gap: 8px;
     margin-top: auto;
     padding: 30px;
-    background-color:  #ffffff;
+    background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.398);
     border-top: 2px solid #333;
     width: 100%;
     margin-bottom: 0;
-    
 }
 
 .footer-icons {
     display: flex;
     justify-content: center;
-    gap: 24px; /* even spacing */
+    gap: 24px;
 }
 
 .footer-text {
     margin: 0;
     text-align: center;
+    color: #333;
+    font-size: 26px;
 }
 
 footer a {
@@ -159,11 +180,9 @@ footer a {
     font-size: 30px;
     text-decoration: none;
     transition: 0.3s;
-    
 }
 
 footer a:hover {
-  
     color: #b2a2a2;
 }
 
@@ -172,154 +191,10 @@ footer p {
     font-size: 26px;
 }
 
+/* ====================================================================== */
+/* THEME TOGGLE BUTTON */
+/* ====================================================================== */
 
-    
-
-
-
-
-
-
-
-/* mobile responsiveness  */
-
-@media (max-width: 768px) {
-  #calculator {
-    width: 85%;
-    padding: 20px;
-    margin-left: 15px;
-    margin-right: 15px;
-  }
-
-  #result {
-    margin-top: 30px;
-    margin-bottom: 10px;
-  }
-
-  h1 {
-    margin-bottom: 20px;
-    font-size: 30px;
-  }
-
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-  }
-
-  h2 {
-    margin-top: 0;
-    margin-bottom: 10px;
-  }
-
-  body {
-    padding: 0;
-  }
-
-  #logo {
-    width: 200px;
-    height: 200px;
-    margin-top: 5px;
-  }
-
-  #title-image {
-    width: 250px;
-    height: auto;
-    margin-bottom: -50px;
-    margin-top: -55px;
-  }
-
-  #footer {
-    gap: 8px;
-    padding: 6px 10px;
-    
-  }
-
-  #footer a {
-    font-size: 16px;
-  }
-
-  #footer p {
-    flex-basis: 100%;
-    text-align: center;
-    font-size: 14px;
-    line-height: 1.2;
-    margin: 0;
-  }
-
-  
- 
-
-}
-
-/* DARK MODE STYLES FOR CALCULATOR */
-
-body.dark-mode {
-    background-color: #1a1a1a;
-    color: #00ff00;
-}
-
-body.dark-mode #calculator {
-    background-color: #393939a9;
-    border-color: #00ff00;
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
-}
-
-body.dark-mode .form-group input[type="number"],
-body.dark-mode select {
-    background-color: #1a1a1a;
-    color: #00ff00;
-    border-color: #00ff00;
-}
-
-body.dark-mode .form-group label {
-    color: #00ff00;
-}
-
-body.dark-mode button {
-    background-color: #00ff0000;
-    color: #1a1a1a;
-    border-color: #00ff0000;
-}
-
-body.dark-mode button:hover {
-    border-color: #00ff00;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-}
-
-body.dark-mode #result {
-    color: #00ff00;
-}
-
-body.dark-mode #result h2 {
-    color: #00ff00;
-}
-
-body.dark-mode #footer {
-    background-color: #393939a9;
-    border-top-color: #00ff00;
-}
-
-body.dark-mode .footer-text {
-    color: #00ff00;
-}
-
-body.dark-mode footer a {
-    color: #00ff00;
-}
-
-body.dark-mode footer a:hover {
-    color: #00ff00;
-    text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
-}
-
-
-
-/* Dark mode logo swap */
-body.dark-mode #logo {
-    content: url('images/logodarkmode.png');
-}
-
-/* Theme toggle button - transparent with icon only */
 .theme-toggle-calc {
     position: absolute;
     top: 20px;
@@ -343,7 +218,101 @@ body.dark-mode #logo {
     border-color: #333;
 }
 
-/* Dark mode icon color */
+
+
+
+/* ====================================================================== */
+/* DARK MODE - BASE STYLES */
+/* ====================================================================== */
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #00ff00;
+}
+
+/* ====================================================================== */
+/* DARK MODE - CALCULATOR CONTAINER */
+/* ====================================================================== */
+
+body.dark-mode #calculator {
+    background-color: #393939a9;
+    border-color: #00ff00;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+}
+
+/* ====================================================================== */
+/* DARK MODE - FORM ELEMENTS */
+/* ====================================================================== */
+
+body.dark-mode .form-group input[type="number"],
+body.dark-mode select {
+    background-color: #1a1a1a;
+    color: #00ff00;
+    border-color: #00ff00;
+}
+
+body.dark-mode .form-group label {
+    color: #00ff00;
+}
+
+/* ====================================================================== */
+/* DARK MODE - BUTTONS & INTERACTION */
+/* ====================================================================== */
+
+body.dark-mode button {
+    background-color: #00ff0000;
+    color: #00ff00;
+    border-color: #00ff0000;
+}
+
+body.dark-mode button:hover {
+    border-color: #00ff00;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+/* ====================================================================== */
+/* DARK MODE - RESULTS & TEXT */
+/* ====================================================================== */
+
+body.dark-mode #result {
+    color: #00ff00;
+}
+
+body.dark-mode #result h2 {
+    color: #00ff00;
+}
+
+/* ====================================================================== */
+/* DARK MODE - FOOTER */
+/* ====================================================================== */
+
+body.dark-mode #footer {
+    background-color: #393939a9;
+    border-top-color: #00ff00;
+}
+
+body.dark-mode .footer-text {
+    color: #00ff00;
+}
+
+body.dark-mode footer a {
+    color: #00ff00;
+}
+
+body.dark-mode footer a:hover {
+    color: #00ff00;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+}
+
+/* Dark mode logo swap - shows dark-themed version */
+body.dark-mode #logo {
+    content: url('images/logodarkmode.png');
+}
+
+/* ====================================================================== */
+/* DARK MODE - THEME TOGGLE ICON */
+/* ====================================================================== */
+
 body.dark-mode .theme-toggle-calc {
     color: #7cff9a;
 }
@@ -353,9 +322,93 @@ body.dark-mode .theme-toggle-calc:hover {
     border-color: #00ff00;
 }
 
-/* Give space so calculator sits below the toggle */
-body {
-    padding-top: 70px;
+/* ====================================================================== */
+/* ANIMATIONS & KEYFRAMES */
+/* ====================================================================== */
+
+/* Binary background scroll animation - flows upward continuously */
+@keyframes scrollUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+/* ====================================================================== */
+/* MOBILE RESPONSIVE (MAX-WIDTH: 768PX) */
+/* ====================================================================== */
+
+@media (max-width: 768px) {
+  /* Calculator container adjustments for smaller screens */
+  #calculator {
+    width: 85%;
+    padding: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  /* Result section spacing */
+  #result {
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  /* Heading sizes */
+  h1 {
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  /* Button sizing for mobile */
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  /* Remove top padding on body for mobile */
+  body {
+    padding: 0;
+  }
+
+  /* Logo sizing */
+  #logo {
+    width: 200px;
+    height: 200px;
+    margin-top: 5px;
+  }
+
+  /* Title image sizing */
+  #title-image {
+    width: 250px;
+    height: auto;
+    margin-bottom: -50px;
+    margin-top: -55px;
+  }
+
+  /* Footer adjustments */
+  #footer {
+    gap: 8px;
+    padding: 6px 10px;
+  }
+
+  #footer a {
+    font-size: 16px;
+  }
+
+  #footer p {
+    flex-basis: 100%;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.2;
+    margin: 0;
+  }
 }
 
 
