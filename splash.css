@@ -112,6 +112,7 @@ body.splash-page {
     height: 52px;
     background-color: transparent;
     border: 2px solid transparent;
+    border-radius: 50%;
     color: #7cff9a;
     font-size: 24px;
     cursor: pointer;
@@ -122,6 +123,8 @@ body.splash-page {
 .theme-toggle:hover {
     color: #00ff00;
     border-color: #00ff00;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
 }
 
 /* ====================================================================== */
